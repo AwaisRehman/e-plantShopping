@@ -307,8 +307,8 @@ const handlePlantsClick = (e) => {
                 <button
                   className={
                     addedToCart[`${categoryIndex}-${plantIndex}`]
-                      ? "product-button btn-disabled "
-                      : "product-button btn-plus"
+                      ? "product-button btn-disabled"
+                      : "product-button"
                   }
                   onClick={() => handleAddToCart(categoryIndex, plantIndex, plant)}
                   disabled={addedToCart[`${categoryIndex}-${plantIndex}`]}
