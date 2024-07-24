@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import './ProductList.css'
 import CartItem from './CartItem';
-import { addItem, removeItem, updateQuantity } from "./CartSlice";
+import { addItem} from "./CartSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 
@@ -248,23 +248,11 @@ function ProductList() {
      }));
   };
 
-  const handleRemoveFromCart = (product) => {
-    dispatch(removeItem(product));
-    setAddedToCart((prevState) => ({
-        ...prevState,
-        [product.name]: false,
-    }));
-};
-
-const handleUpdateQuantity = (product, quantity) => {
-    dispatch(updateQuantity({ product, quantity }));
-};
-
-
    const handleCartClick = (e) => {
     e.preventDefault();
     setShowCart(true); // Set showCart to true when cart icon is clicked
 };
+
 const handlePlantsClick = (e) => {
     e.preventDefault();
     setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
