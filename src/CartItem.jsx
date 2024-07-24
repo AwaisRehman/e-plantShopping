@@ -7,7 +7,7 @@ const CartItem = ({ onContinueShopping }) => {
   const cart = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
 
-    // Function to convert cost string to a number
+// Function to convert cost string to a number
   const parseCost = (cost) => {
     return parseFloat(cost.replace(/[^0-9.-]+/g, ''));
   };
@@ -24,7 +24,6 @@ const CartItem = ({ onContinueShopping }) => {
           console.error(`Invalid cost (${item.cost}) or quantity (${item.quantity}) for item ${item.name}`);
           return total;
         }
-  
         return total + (itemCost * itemQuantity);
       }, 0).toFixed(2);
 
@@ -66,8 +65,10 @@ const CartItem = ({ onContinueShopping }) => {
 
     return (itemCost * itemQuantity).toFixed(2);
 
+  };
 
-
+  const handleCheckoutShopping = (e) => {
+    alert('Functionality to be added for future reference');
   };
 
   return (
@@ -95,7 +96,7 @@ const CartItem = ({ onContinueShopping }) => {
       <div className="continue_shopping_btn">
         <button className="get-started-button" onClick={(e) => handleContinueShopping(e)}>Continue Shopping</button>
         <br />
-        <button className="get-started-button1">Checkout</button>
+        <button className="get-started-button1" onClick={(e) => handleCheckoutShopping(e)}>Checkout</button>
       </div>
     </div>
   );
