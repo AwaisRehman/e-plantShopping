@@ -257,18 +257,20 @@ function ProductList() {
    const handleCartClick = (e) => {
     e.preventDefault();
     setShowCart(true); // Set showCart to true when cart icon is clicked
+    setShowPlants(false); // Hide Plants page when cart is clicked
+
 };
 
 const handlePlantsClick = (e) => {
     e.preventDefault();
-    setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
-    setShowCart(false); // Hide the cart when navigating to About Us
+    setShowPlants(true); // Set showPlants to true when "Plants" link is clicked
+    setShowCart(false); // Hide the cart when navigating to Plants page
 };
 
    const handleContinueShopping = (e) => {
     e.preventDefault();
     setShowCart(false);
-  };
+};
     return (
         <div>
              <div className="navbar" style={styleObj}>
